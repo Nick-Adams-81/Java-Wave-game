@@ -94,6 +94,12 @@ public class Game extends Canvas implements Runnable{
         bs.show();
     }
 
+    public static int clamp(int var, int min, int max) {
+        if(var >= max) return var = max;
+        else if(var <= min) return var = min;
+        else return  var;
+    }
+
     public static void main(String[] args) {
         new Game();
     }
