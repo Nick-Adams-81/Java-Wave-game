@@ -20,7 +20,6 @@ public class Player extends GameObject {
 
     @Override
     public void tick() {
-
         x += velX;
         y += velY;
 
@@ -28,18 +27,18 @@ public class Player extends GameObject {
         y = Game.clamp(y, 0, Game.HEIGHT - 58);
 
         collision();
-
-
     }
 
     private void collision() {
         for(int i = 0; i < handler.object.size(); i++) {
+
             GameObject tempObject = handler.object.get(i);
             if(tempObject.getId() == ID.BasicEnemy) {
                 if(getBounds().intersects(tempObject.getBounds())) {
                     HUD.HEALTH -= 2;
                 }
             }
+
         }
     }
 
