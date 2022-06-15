@@ -18,6 +18,7 @@ public class Game extends Canvas implements Runnable{
     private Handler handler;
 
     private HUD hud;
+    private Spawn spawner;
 
     public Game() {
         handler = new Handler();
@@ -26,13 +27,10 @@ public class Game extends Canvas implements Runnable{
         new Window(WIDTH, HEIGHT, "Wave Game", this);
 
         hud = new HUD();
-
+        spawner = new Spawn(handler, hud);
         r = new Random();
-        handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
 
+        handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler));
 
     }
 
