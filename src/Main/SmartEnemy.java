@@ -21,6 +21,7 @@ public class SmartEnemy extends GameObject{
 
     }
 
+    // cast x and y to int
     public Rectangle getBounds() {
         return new Rectangle((int)x, (int)y, 16, 16);
     }
