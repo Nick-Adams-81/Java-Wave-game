@@ -5,7 +5,7 @@ import java.awt.image.BufferStrategy;
 import java.io.Serial;
 import java.util.Random;
 
-public class Game extends Canvas implements Runnable{
+public class Game extends Canvas implements Runnable {
 
     @Serial
     private static final long serialVersionUID = 1550691097823471818L;

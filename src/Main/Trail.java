@@ -2,7 +2,7 @@ package Main;
 
 import java.awt.*;
 
-public class Trail extends GameObject{
+public class Trail extends GameObject {
 
     private float alpha = 1;
     private float life;

@@ -2,7 +2,7 @@ package Main;
 
 import java.awt.*;
 
-public class SmartEnemy extends GameObject{
+public class SmartEnemy extends GameObject {
 
     private Handler handler;
     private GameObject player;

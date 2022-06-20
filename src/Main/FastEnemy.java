@@ -2,7 +2,7 @@ package Main;
 
 import java.awt.*;
 
-public class FastEnemy extends GameObject{
+public class FastEnemy extends GameObject {
 
     private Handler handler;
 
