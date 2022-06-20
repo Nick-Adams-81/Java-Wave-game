@@ -66,8 +66,7 @@ public class Menu extends MouseAdapter {
 
     public void render(Graphics g) {
         if (game.gameState == Game.STATE.Menu) {
-            Font font = new Font("arial", 1, 50);
-            Font font2 = new Font("arial", 1, 50);
+            Font font = new Font("arial", 2, 50);
 
             g.setFont(font);
             g.setColor(Color.WHITE);
@@ -90,15 +89,20 @@ public class Menu extends MouseAdapter {
             g.setColor(Color.RED);
             g.drawString("Quit", 420, 447);
         } else if(game.gameState == Game.STATE.Help) {
-            Font font = new Font("arial", 1, 50);
+            Font font = new Font("arial", 2, 50);
+            Font font2 = new Font("arial", 2, 25);
+
 
             g.setFont(font);
             g.setColor(Color.WHITE);
             g.drawString("Help", 420, 147);
 
+            g.setFont(font2);
+            g.drawString("This is the help menu, coming soon!", 250, 250);
 
+            g.setFont(font);
             g.drawRect(370, 400, 200, 64);
-            g.drawString("Back", 420, 447);
+            g.drawString("Back", 419, 448);
         }
     }
 }
