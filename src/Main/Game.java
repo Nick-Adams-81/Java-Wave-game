@@ -31,13 +31,17 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
         handler = new Handler();
+        menu = new Menu(this, handler);
+
         this.addKeyListener(new KeyInput(handler));
+        this.addMouseListener(menu);
+
 
         new Window(WIDTH, HEIGHT, "Wave Game", this);
 
         hud = new HUD();
         spawner = new Spawn(handler, hud);
-        menu = new Menu();
+
         r = new Random();
 
         if(gameState == STATE.Game) {
