@@ -33,12 +33,18 @@ public class Menu extends MouseAdapter {
             game.gameState = Game.STATE.Help;
         }
 
+        // back button for help
+        if(game. gameState == Game.STATE.Help) {
+            if(mouseOver(mx, my, 370, 400, 200, 64)) {
+                game.gameState = Game.STATE.Menu;
+                return;
+            }
+        }
 
         // quit button
         if(mouseOver(mx, my, 370, 400, 200, 64)) {
             System.exit(1);
         }
-
 
     }
 
@@ -89,6 +95,10 @@ public class Menu extends MouseAdapter {
             g.setFont(font);
             g.setColor(Color.WHITE);
             g.drawString("Help", 420, 147);
+
+
+            g.drawRect(370, 400, 200, 64);
+            g.drawString("Back", 420, 447);
         }
     }
 }
