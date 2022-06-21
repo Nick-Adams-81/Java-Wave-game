@@ -49,6 +49,18 @@ public class Menu extends MouseAdapter {
             System.exit(1);
         }
 
+        // try again button
+        if(Game. gameState == Game.STATE.End) {
+            if(mouseOver(mx, my, 300, 600, 320, 64)) {
+                Game.gameState = Game.STATE.Game;
+                hud.setLevel(1);
+                hud.setScore(0);
+                handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player, handler));
+                handler.clearEnemys();
+                handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT -50), ID.BasicEnemy, handler));
+            }
+        }
+
     }
 
     public void mouseRelease(MouseEvent e) {
@@ -106,21 +118,21 @@ public class Menu extends MouseAdapter {
             g.setFont(font);
             g.drawRect(370, 400, 200, 64);
             g.drawString("Back", 419, 448);
-        } else if(game.gameState == Game.STATE.End) {
+        } else if(Game.gameState == Game.STATE.End) {
             Font font = new Font("arial", 2, 50);
             Font font2 = new Font("arial", 2, 25);
 
 
             g.setFont(font);
             g.setColor(Color.WHITE);
-            g.drawString("Game Over", 420, 147);
+            g.drawString("Game Over", 300, 147);
 
             g.setFont(font2);
             g.drawString("Your Final score is: " + hud.getScore(), 300, 250);
 
             g.setFont(font);
-            g.drawRect(370, 400, 320, 64);
-            g.drawString("Play again?", 400, 448);
+            g.drawRect(300, 600, 320, 64);
+            g.drawString("Try Again?", 340, 648);
         }
     }
 }
