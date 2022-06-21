@@ -13,21 +13,12 @@ public class MenuParticle extends GameObject{
     private int blue = r.nextInt(255);
     private Color color;
 
-    int dir = 0;
-
     public MenuParticle(int x, int y, ID id, Handler handler) {
         super(x, y, id);
         this.handler = handler;
 
-        dir = r.nextInt(2);
-        if(dir == 0) {
-            velX = 2;
-            velY = 9;
-        } else if(dir == 1) {
-            velX = 9;
-            velY = 2;
-        }
-
+        velX = (r.nextInt(5 - -5) + -5);
+        velY = (r.nextInt(5 - -5) + -5);
         color = new Color(red, green, blue);
 
     }
