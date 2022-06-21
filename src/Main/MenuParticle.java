@@ -11,13 +11,24 @@ public class MenuParticle extends GameObject{
     private int red = r.nextInt(255);
     private int green = r.nextInt(255);
     private int blue = r.nextInt(255);
+    private Color color;
+
+    int dir = 0;
 
     public MenuParticle(int x, int y, ID id, Handler handler) {
         super(x, y, id);
         this.handler = handler;
 
-        velX = 2;
-        velY = 9;
+        dir = r.nextInt(2);
+        if(dir == 0) {
+            velX = 2;
+            velY = 9;
+        } else if(dir == 1) {
+            velX = 9;
+            velY = 2;
+        }
+
+        color = new Color(red, green, blue);
 
     }
 
@@ -32,7 +43,8 @@ public class MenuParticle extends GameObject{
 
         if(y <= 0 || y >= Game.HEIGHT - 32) velY *= -1;
         if(x <= 0 || x >= Game.WIDTH - 16) velX *= -1;
-        handler.addObject(new Trail((int)x, (int)y,  ID.Trail, Color.CYAN, 16, 16, 0.02f, handler));
+
+        handler.addObject(new Trail((int)x, (int)y,  ID.Trail, color, 16, 16, 0.02f, handler));
 
     }
 
