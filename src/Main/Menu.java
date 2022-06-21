@@ -10,10 +10,12 @@ public class Menu extends MouseAdapter {
     private Game game;
     private Handler handler;
     private Random r = new Random();
+    private HUD hud;
 
-    public Menu(Game game, Handler handler) {
+    public Menu(Game game, Handler handler, HUD hud) {
         this.game = game;
         this.handler = handler;
+        this.hud = hud;
     }
 
 
@@ -104,6 +106,21 @@ public class Menu extends MouseAdapter {
             g.setFont(font);
             g.drawRect(370, 400, 200, 64);
             g.drawString("Back", 419, 448);
+        } else if(game.gameState == Game.STATE.End) {
+            Font font = new Font("arial", 2, 50);
+            Font font2 = new Font("arial", 2, 25);
+
+
+            g.setFont(font);
+            g.setColor(Color.WHITE);
+            g.drawString("Game Over", 420, 147);
+
+            g.setFont(font2);
+            g.drawString("Your Final score is: " + hud.getScore(), 300, 250);
+
+            g.setFont(font);
+            g.drawRect(370, 400, 320, 64);
+            g.drawString("Play again?", 400, 448);
         }
     }
 }
