@@ -70,8 +70,8 @@ public class Menu extends MouseAdapter {
             Font font = new Font("arial", 2, 50);
 
             g.setFont(font);
-            g.setColor(Color.WHITE);
-            g.drawString("Menu", 400, 150);
+            g.setColor(Color.CYAN);
+            g.drawString("Wave 10", 365, 150);
 
 
             g.setColor(Color.WHITE);
@@ -99,7 +99,7 @@ public class Menu extends MouseAdapter {
             g.drawString("Help", 420, 147);
 
             g.setFont(font2);
-            g.drawString("This is the help menu, coming soon!", 250, 250);
+            g.drawString("Use the arrow keys to move the hero", 250, 250);
 
             g.setFont(font);
             g.drawRect(370, 400, 200, 64);
