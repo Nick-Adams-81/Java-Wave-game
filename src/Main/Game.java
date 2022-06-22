@@ -40,7 +40,7 @@ public class Game extends Canvas implements Runnable {
         this.addMouseListener(menu);
 
 
-        new Window(WIDTH, HEIGHT, "Wave Game", this);
+        new Window(WIDTH, HEIGHT, "Wave 10", this);
 
 
         spawner = new Spawn(handler, hud);
@@ -94,7 +94,7 @@ public class Game extends Canvas implements Runnable {
             }
             if(System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-                //qSystem.out.println("FPS: " + frames);
+
                 frames = 0;
 
             }
