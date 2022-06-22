@@ -114,6 +114,7 @@ public class Menu extends MouseAdapter {
 
             g.setFont(font2);
             g.drawString("Use the arrow keys to move the hero", 250, 250);
+            g.drawString("Use the 'P' button to pause and unpause your game", 180, 280);
 
             g.setFont(font);
             g.drawRect(370, 400, 200, 64);
