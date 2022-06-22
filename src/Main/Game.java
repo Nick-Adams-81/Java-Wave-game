@@ -48,7 +48,7 @@ public class Game extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "Wave 10", this);
 
 
-        spawner = new Spawn(handler, hud);
+        spawner = new Spawn(handler, hud, this);
 
         r = new Random();
 
