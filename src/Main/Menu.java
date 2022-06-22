@@ -83,12 +83,10 @@ public class Menu extends MouseAdapter {
         // try again button
         if(Game. gameState == Game.STATE.End) {
             if(mouseOver(mx, my, 300, 600, 320, 64)) {
-                Game.gameState = Game.STATE.Game;
+                Game.gameState = Game.STATE.Menu;
                 hud.setLevel(1);
                 hud.setScore(0);
-                handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player, handler));
-                handler.clearEnemys();
-                handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT -50), ID.BasicEnemy, handler));
+
             }
         }
 
@@ -164,7 +162,7 @@ public class Menu extends MouseAdapter {
 
             g.setFont(font);
             g.drawRect(300, 600, 320, 64);
-            g.drawString("Try Again?", 340, 648);
+            g.drawString("Main Menu", 340, 648);
         } else if(Game.gameState == Game.STATE.Select) {
 
             Font font = new Font("arial", 2, 50);
