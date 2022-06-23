@@ -14,7 +14,6 @@ public class KeyInput extends KeyAdapter {
 
     public KeyInput(Handler handler, Game game) {
         this.handler = handler;
-
         this.game = game;
 
         keyDown[0] = false;
@@ -45,11 +44,9 @@ public class KeyInput extends KeyAdapter {
                 if(Game.pause) Game.pause = false;
                 else Game.pause = true;
             }
-
         }
 
         if(key == KeyEvent.VK_ESCAPE) System.exit(1);
-
         if(key == KeyEvent.VK_SPACE) {
             if(Game.gameState == Game.STATE.Game) Game.gameState = Game.STATE.Shop;
             else if(Game.gameState == Game.STATE.Shop) Game.gameState = Game.STATE.Game;
