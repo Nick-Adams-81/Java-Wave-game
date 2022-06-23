@@ -7,13 +7,15 @@ import java.awt.event.MouseEvent;
 public class Shop extends MouseAdapter {
 
     Handler handler;
+    HUD hud;
 
     private int B1 = 1000;
     private int B2 = 1000;
     private int B3 = 1000;
 
-    public Shop(Handler handler) {
+    public Shop(Handler handler, HUD hud) {
         this.handler = handler;
+        this.hud = hud;
     }
 
     public void render(Graphics g) {
@@ -37,9 +39,34 @@ public class Shop extends MouseAdapter {
         g.drawString("Cost: " + B3, 110, 140);
         g.drawRect(400, 100, 110, 80);
 
+        g.drawString("SCORE: " + hud.getScore(), Game.WIDTH / 2 - 50, 300);
+        g.drawString("Press Space to go Back", Game.WIDTH / 2 - 50, 330);
+
     }
 
     public void mousePressed(MouseEvent e) {
+        int mx = e.getX();
+        int my = e.getY();
 
+        // box 1
+        if(mx >= 100 && mx <= 200) {
+            if(my >= 100 && my <= 180) {
+                System.out.println("box 1");
+            }
+        }
+
+        // box 2
+        if(mx >= 250 && mx <= 350) {
+            if(my >= 100 && my <= 180) {
+                System.out.println("box 2");
+            }
+        }
+
+        // box 3
+        if(mx >= 400 && mx <= 500) {
+            if(my >= 100 && my <= 180) {
+                System.out.println("box 3");
+            }
+        }
     }
 }
