@@ -13,10 +13,8 @@ public class Game extends Canvas implements Runnable {
     public static final int WIDTH = 940, HEIGHT = WIDTH / 12 * 9;
     private Thread thread;
     private boolean running = false;
-
     public static boolean pause = false;
     public int diff = 0;
-
 
     private Random r;
     private Handler handler;
@@ -49,7 +47,6 @@ public class Game extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "Wave 10", this);
 
         spawner = new Spawn(handler, hud, this);
-
         r = new Random();
 
         if(gameState == STATE.Game) {
@@ -99,9 +96,7 @@ public class Game extends Canvas implements Runnable {
             }
             if(System.currentTimeMillis() - timer > 1000) {
                 timer += 1000;
-
                 frames = 0;
-
             }
         }
         stop();
@@ -127,7 +122,6 @@ public class Game extends Canvas implements Runnable {
             menu.tick();
             handler.tick();
         }
-
     }
 
     private void render() {
@@ -139,8 +133,6 @@ public class Game extends Canvas implements Runnable {
         Graphics g = bs.getDrawGraphics();
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
-
-
 
         if(pause) {
             g.drawString("Paused", 100, 100);
