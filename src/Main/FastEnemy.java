@@ -6,7 +6,6 @@ public class FastEnemy extends GameObject {
 
     private Handler handler;
 
-
     public FastEnemy(int x, int y, ID id, Handler handler) {
         super(x, y, id);
         this.handler = handler;
