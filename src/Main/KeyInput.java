@@ -50,6 +50,11 @@ public class KeyInput extends KeyAdapter {
 
         if(key == KeyEvent.VK_ESCAPE) System.exit(1);
 
+        if(key == KeyEvent.VK_SPACE) {
+            if(Game.gameState == Game.STATE.Game) Game.gameState = Game.STATE.Shop;
+            else if(Game.gameState == Game.STATE.Shop) Game.gameState = Game.STATE.Game;
+        }
+
     }
 
     public void keyReleased(KeyEvent e) {

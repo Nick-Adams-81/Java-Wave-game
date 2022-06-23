@@ -12,6 +12,9 @@ public class Shop extends MouseAdapter {
     }
 
     public void render(Graphics g) {
+        g.setColor(Color.white);
+        g.setFont(new Font("arial", 0, 40));
+        g.drawString("Shop", Game.WIDTH / 2 - 50, 50);
 
     }
 

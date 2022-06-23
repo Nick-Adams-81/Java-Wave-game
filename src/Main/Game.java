@@ -139,7 +139,7 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
-        handler.render(g);
+
 
         if(pause) {
             g.drawString("Paused", 100, 100);
@@ -147,10 +147,12 @@ public class Game extends Canvas implements Runnable {
 
         if(gameState == STATE.Game) {
             hud.render(g);
+            handler.render(g);
         } else if(gameState == STATE.Shop) {
-
+            shop.render(g);
         } else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select) {
             menu.render(g);
+            handler.render(g);
         }
 
         g.dispose();
