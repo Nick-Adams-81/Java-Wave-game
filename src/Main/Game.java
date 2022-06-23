@@ -20,16 +20,16 @@ public class Game extends Canvas implements Runnable {
 
     private Random r;
     private Handler handler;
-
     private HUD hud;
     private Spawn spawner;
-
     private Menu menu;
+    private Shop shop;
 
     public enum STATE {
         Menu,
         Select,
         Help,
+        Shop,
         Game,
         End
     }
@@ -39,14 +39,13 @@ public class Game extends Canvas implements Runnable {
     public Game() {
         handler = new Handler();
         hud = new HUD();
+        shop = new Shop(handler);
         menu = new Menu(this, handler, hud);
 
         this.addKeyListener(new KeyInput(handler, this));
         this.addMouseListener(menu);
 
-
         new Window(WIDTH, HEIGHT, "Wave 10", this);
-
 
         spawner = new Spawn(handler, hud, this);
 
@@ -148,6 +147,8 @@ public class Game extends Canvas implements Runnable {
 
         if(gameState == STATE.Game) {
             hud.render(g);
+        } else if(gameState == STATE.Shop) {
+
         } else if(gameState == STATE.Menu || gameState == STATE.Help || gameState == STATE.End || gameState == STATE.Select) {
             menu.render(g);
         }
