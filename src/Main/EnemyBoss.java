@@ -50,13 +50,13 @@ public class EnemyBoss extends GameObject{
 
         if(x <=0 || x >= Game.WIDTH -96) velX *= -1;
 
-       handler.addObject(new Trail((int)x, (int)y,  ID.Trail, Color.RED, 96, 96, 0.02f, handler));
+       //handler.addObject(new Trail((int)x, (int)y,  ID.Trail, Color.RED, 96, 96, 0.02f, handler));
 
     }
 
     @Override
     public void render(Graphics g) {
         g.setColor(Color.RED);
-        g.fillRect((int)x, (int)y, 16, 16);
+        g.fillRect((int)x, (int)y, 96, 96);
     }
 }
