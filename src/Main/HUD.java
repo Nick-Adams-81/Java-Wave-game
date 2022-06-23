@@ -13,12 +13,9 @@ public class HUD {
 
     public void tick() {
         HEALTH = Game.clamp((int)HEALTH, 0, 100 + (bounds / 2));
-
         greenValue = Game.clamp(greenValue, 0, 255);
         greenValue = (int)HEALTH * 2;
-
         score++;
-
     }
 
     public void render(Graphics g) {
@@ -46,6 +43,7 @@ public class HUD {
     public void setLevel(int level) {
         this.level = level;
     }
+
     public int getLevel() {
         return level;
     }
