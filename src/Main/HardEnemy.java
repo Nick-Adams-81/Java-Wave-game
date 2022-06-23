@@ -13,8 +13,8 @@ public class HardEnemy extends GameObject {
         super(x, y, id);
         this.handler = handler;
 
-        velX = 5;
-        velY = 5;
+        velX = 10;
+        velY = 10;
     }
 
     public Rectangle getBounds() {

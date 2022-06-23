@@ -74,7 +74,7 @@ public class Menu extends MouseAdapter {
         }
 
         // quit button
-        if(mouseOver(mx, my, 370, 400, 200, 64)) {
+        if(mouseOver(mx, my, 370, 430, 200, 54)) {
             System.exit(1);
         }
 
@@ -130,6 +130,7 @@ public class Menu extends MouseAdapter {
 
             g.setColor(Color.WHITE);
             g.drawRect(370, 400, 200, 64);
+
             g.setColor(Color.RED);
             g.drawString("Quit", 420, 447);
         } else if(game.gameState == Game.STATE.Help) {
