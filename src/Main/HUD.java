@@ -10,6 +10,7 @@ public class HUD {
     private int greenValue = 255;
     private int score = 0;
     private int level = 1;
+    private int wave = 1;
 
     public void tick() {
         HEALTH = Game.clamp((int)HEALTH, 0, 100 + (bounds / 2));
@@ -28,7 +29,8 @@ public class HUD {
 
         g.drawString("Score: " + score, 15, 64);
         g.drawString("Level: " + level, 15, 80);
-        g.drawString("Space for the Shop", 15, 94);
+        g.drawString("Wave: " + wave , 15, 94);
+        g.drawString("Space for Shop", 15, 108);
 
     }
 
@@ -47,4 +49,8 @@ public class HUD {
     public int getLevel() {
         return level;
     }
+
+    public void setWave(int wave) {this.wave = wave;}
+
+    public int getWave() {return wave;}
 }
