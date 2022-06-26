@@ -25,10 +25,6 @@ public class Menu extends MouseAdapter {
 
         // play button
         if(mouseOver(mx, my, 370, 200, 200, 64)) {
-//            game.gameState = Game.STATE.Game;
-//            handler.addObject(new Player(Game.WIDTH/2-32, Game.HEIGHT/2-32, ID.Player, handler));
-//            handler.clearEnemys();
-//            handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH), r.nextInt(Game.HEIGHT -50), ID.BasicEnemy, handler));
             game.gameState = Game.STATE.Select;
             return;
         }
@@ -145,6 +141,7 @@ public class Menu extends MouseAdapter {
             g.setFont(font2);
             g.drawString("Use the arrow keys to move the hero", 250, 250);
             g.drawString("Use the 'P' button to pause and unpause your game", 180, 280);
+            g.drawString("Use the Space bar to access the Store", 240,310);
 
             g.setFont(font);
             g.drawRect(370, 400, 200, 64);
@@ -152,7 +149,6 @@ public class Menu extends MouseAdapter {
         } else if(Game.gameState == Game.STATE.End) {
             Font font = new Font("arial", 2, 50);
             Font font2 = new Font("arial", 2, 25);
-
 
             g.setFont(font);
             g.setColor(Color.WHITE);
