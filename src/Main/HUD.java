@@ -13,8 +13,8 @@ public class HUD {
     private int wave = 1;
 
     public void tick() {
-        HEALTH = Game.clamp((int) HEALTH, 0, 100 + (bounds / 2));
-        greenValue = Game.clamp(greenValue, 0, 255);
+        HEALTH = Game.clamp(HEALTH, 0, 100 + (bounds / 2));
+        greenValue = (int) Game.clamp(greenValue, 0, 255);
         greenValue = (int) HEALTH * 2;
         score++;
     }
